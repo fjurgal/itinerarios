@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Explorable asignaturas</title>
+  <style>
+    body { font-family: sans-serif; padding: 1em; background: #f8f8f8; }
+    .asignatura { padding: 0.5em; background: #e0f7fa; margin-bottom: 0.5em; border-radius: 5px; }
+    button { margin-top: 1em; }
+  </style>
+</head>
+<body>
+  <h1>Asignaturas según selección</h1>
+
+  <label>Especialidad:
+    <select id="especialidad">
+      <option value="musical">Musical</option>
+      <option value="teatral">Teatral</option>
+    </select>
+  </label>
+
+  <label>Itinerario:
+    <select id="itinerario">
+      <option value="A">Itinerario A</option>
+      <option value="B">Itinerario B</option>
+    </select>
+  </label>
+
+  <div id="resultado"></div>
+
+  <script>
+    const asignaturas = [
+      { nombre: "Lenguaje musical", curso: 1, especialidad: "musical", itinerario: "A", horas: 2 },
+      { nombre: "Interpretación", curso: 1, especialidad: "teatral", itinerario: "B", horas: 3 },
+      { nombre: "Taller de conjunto", curso: 2, especialidad: "musical", itinerario: "A", horas: 1.5 },
+    ];
+
+    const resultado = document.getElementById("resultado");
+    const especialidad = document.getElementById("especialidad");
+    const itinerario = document.getElementById("itinerario");
+
+    function actualizar() {
+      const esp = especialidad.value;
+      const iti = itinerario.value;
+      const filtradas = asignaturas.filter(a =>
+        a.especialidad === esp && a.itinerario === iti
+      );
+
+      resultado.innerHTML = filtradas.map(a =>
+        `<div class="asignatura"><strong>${a.nombre}</strong> – ${a.horas}h</div>`
+      ).join('');
+    }
+
+    especialidad.onchange = actualizar;
+    itinerario.onchange = actualizar;
+
+    actualizar(); // inicial
+  </script>
+</body>
+</html>
