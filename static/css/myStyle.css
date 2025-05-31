@@ -1,0 +1,80 @@
+* {
+  font-family: Calibri, Arial, sans-serif;
+}
+table {
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+th, td {
+  border: 1px solid #666;
+  padding: 0.6em;
+  vertical-align: top;
+  width:50%;
+}
+th {
+  background-color: #e5e6e6;
+  border: 2px solid #444;
+}
+.descripcion {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: 0.2em;
+}
+button {
+  margin-left: 0.5em;
+  font-size: 0.8em;
+}
+
+td > div {
+  padding: 0em;
+  border-radius: 2px;
+}
+td:has(.obligatoria) {
+  background: #a4e4e2;
+}
+td:has(.especialidad) {
+  background: #d6dfce;
+}
+td:has(.especialidadItinerario) {
+  background: #f8e3c1;
+}
+td:has(.itinerario) {
+  background: #f3c7c7;
+}
+td:has(.optativa) {
+  background: #e5e6e6;
+}
+.marco {
+  max-width: 800px;
+  margin-top:1em;
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 1em; 
+  border:1px solid #ccc; 
+  padding: 0.8em; 
+  border-radius:6px;
+}
+.leyenda-item {
+  display:flex; 
+  align-items:center; 
+  gap: 0.5em;
+}
+.leyenda-color {
+  width: 1.2em; 
+  height: 1.2em;
+  border: 1px solid #aaa;
+}
+.leyenda-obligatoria {
+  background: #a4e4e2;
+}
+.leyenda-especialidad {
+  background: #d6dfce;
+}
+.leyenda-itinerario-esp {
+  background: #f8e3c1;
+}
+.leyenda-itinerario {
+  background: #f3c7c7;
+}
