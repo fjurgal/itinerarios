@@ -227,7 +227,7 @@ function formatearHoras(horas) {
 }
 
 function formatearAsignatura (asig) {
-	return `<div class="${asig.tipo}" title="${asig.descripcion || ''}">
+	return `<div class="${asig.tipo}">
     <strong>${asig.nombre}</strong> <span style="float:right;">${formatearHoras(asig.horas)}</span>
   </div>`;
 }
